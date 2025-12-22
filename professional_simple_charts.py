@@ -63,7 +63,7 @@ def load_data():
 
 def chart1_covid_impact_professional(df):
     
-    # EU27 countries (consistent with official EU statistics)
+    # EU countries (consistent with official EU statistics)
     eu27_countries = ['ES', 'IT', 'FR', 'DE', 'NL', 'PT', 'EL', 'HR', 'CY', 'MT',
                      'PL', 'CZ', 'HU', 'DK', 'SE', 'AT', 'BE', 'RO', 'BG', 'SK', 
                      'SI', 'FI', 'IE', 'LU', 'EE', 'LV', 'LT']
@@ -145,7 +145,7 @@ def chart1_covid_impact_map(df):
     import plotly.express as px
     import plotly.graph_objects as go
     
-    # EU27 countries (consistent with official EU statistics)
+    # EU countries (consistent with official EU statistics)
     eu27_countries = ['ES', 'IT', 'FR', 'DE', 'NL', 'PT', 'EL', 'HR', 'CY', 'MT',
                      'PL', 'CZ', 'HU', 'DK', 'SE', 'AT', 'BE', 'RO', 'BG', 'SK', 
                      'SI', 'FI', 'IE', 'LU', 'EE', 'LV', 'LT']
@@ -313,7 +313,7 @@ def chart2_recovery_map_journalism(df):
     import plotly.express as px
     import plotly.graph_objects as go
     
-    # EU27 countries (consistent with official EU statistics)
+    # EU countries (consistent with official EU statistics)
     eu27_countries = ['ES', 'IT', 'FR', 'DE', 'NL', 'PT', 'EL', 'HR', 'CY', 'MT',
                      'PL', 'CZ', 'HU', 'DK', 'SE', 'AT', 'BE', 'RO', 'BG', 'SK', 
                      'SI', 'FI', 'IE', 'LU', 'EE', 'LV', 'LT']
@@ -491,7 +491,7 @@ def chart2_recovery_map_journalism(df):
                 
 def chart2_recovery_trajectory_professional(df):
     
-    # EU27 recovery data
+    # European Union recovery data
     recovery_data = df[
         (df['geo'] == 'EU27_2020') &
         (df['unit'] == 'PCH_SM_19') &
@@ -562,7 +562,7 @@ def chart2_recovery_trajectory_professional(df):
         plt.show()
 
 def chart3_country_performance_professional(df):     
-    # EU27 countries (consistent with official EU statistics)
+    # EU countries (consistent with official EU statistics)
     eu27_countries = ['ES', 'IT', 'FR', 'DE', 'NL', 'PT', 'EL', 'HR', 'CY', 'MT',
                      'PL', 'CZ', 'HU', 'DK', 'SE', 'AT', 'BE', 'RO', 'BG', 'SK', 
                      'SI', 'FI', 'IE', 'LU', 'EE', 'LV', 'LT']
@@ -580,7 +580,7 @@ def chart3_country_performance_professional(df):
         performance = performance_data.groupby('geo')['obs_value'].mean().sort_values(ascending=False)
         performance = performance.dropna()
         
-        # EU27 country names
+        # EU country names
         country_names = {
             'ES': 'Spain', 'IT': 'Italy', 'FR': 'France', 'DE': 'Germany', 'NL': 'Netherlands',
             'PT': 'Portugal', 'EL': 'Greece', 'HR': 'Croatia', 'CY': 'Cyprus', 'MT': 'Malta',
@@ -999,7 +999,7 @@ EXECUTIVE SUMMARY:
 
 def chart7_domestic_vs_international_recovery(df):
     
-    # Get EU27 domestic and international recovery data
+    # Get EU domestic and international recovery data
     recovery_data = df[
         (df['geo'] == 'EU27_2020') &
         (df['unit'] == 'PCH_SM_19') &
@@ -1126,7 +1126,7 @@ def chart7_domestic_vs_international_recovery(df):
 
 def chart8_seasonal_patterns_comparison(df):
     
-    # Get EU27 monthly data for comparison periods
+    # Get EU monthly data for comparison periods
     seasonal_data = df[
         (df['geo'] == 'EU27_2020') &
         (df['unit'] == 'NR') &
@@ -1250,10 +1250,10 @@ def main():
     print("1. Creating COVID-19 impact analysis (Executive Version)...")
     chart1_covid_impact_professional(df)
     
-    print("1b. Creating COVID-19 impact map (EU27 Countries)...")
+    print("1b. Creating COVID-19 impact map (EU Countries)...")
     chart1_covid_impact_map(df)
     
-    print("2a. Creating 2024 recovery map (EU27 Countries)...")
+    print("2a. Creating 2024 recovery map (EU Countries)...")
     chart2_recovery_map_journalism(df)
     
     print("2. Creating recovery trajectory analysis (Executive Version)...")
