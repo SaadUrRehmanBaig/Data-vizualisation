@@ -1,55 +1,25 @@
 # Document files
 *.pdf
 *.pptx
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
+# Build outputs
 dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+build/
+.cache/
 
-# Virtual environments
+# Environment variables
 .env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
 
-# Jupyter Notebook
-.ipynb_checkpoints
-
-# Data files (keep CSV but ignore large datasets)
-*.xlsx
-*.xls
-# Uncomment if you want to ignore large CSV files:
-# *.csv
-
-# Generated images and outputs
-*.jpg
-*.jpeg
-*.gif
-*.svg
-
-# IDE and editor files
+# IDE files
 .vscode/
 .idea/
 *.swp
@@ -65,10 +35,34 @@ venv.bak/
 ehthumbs.db
 Thumbs.db
 
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Jekyll
+_site/
+.sass-cache/
+.jekyll-cache/
+.jekyll-metadata
+
 # Temporary files
 *.tmp
 *.temp
 *.log
 
-# Matplotlib cache
-.matplotlib/
+# GitHub Pages
+.github/
+
+# Keep PNG images for the dashboard
+!assets/images/*.png
