@@ -48,7 +48,6 @@ venv.bak/
 *.jpeg
 *.gif
 *.svg
-*.html
 
 # IDE and editor files
 .vscode/
