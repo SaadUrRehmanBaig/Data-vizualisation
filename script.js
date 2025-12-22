@@ -212,40 +212,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add tooltip functionality for metrics
-    const metricValues = document.querySelectorAll('.metric-value');
-    metricValues.forEach(metric => {
-        metric.addEventListener('mouseenter', function() {
-            const tooltip = document.createElement('div');
-            tooltip.className = 'tooltip';
-            tooltip.textContent = 'Click to learn more about this metric';
-            tooltip.style.cssText = `
-                position: absolute;
-                background: #2c3e50;
-                color: white;
-                padding: 8px 12px;
-                border-radius: 4px;
-                font-size: 12px;
-                white-space: nowrap;
-                z-index: 1000;
-                pointer-events: none;
-                transform: translateX(-50%);
-                margin-top: -40px;
-                left: 50%;
-            `;
-            
-            this.style.position = 'relative';
-            this.appendChild(tooltip);
-        });
-        
-        metric.addEventListener('mouseleave', function() {
-            const tooltip = this.querySelector('.tooltip');
-            if (tooltip) {
-                this.removeChild(tooltip);
-            }
-        });
-    });
-
     // Add section transition effects
     function addSectionTransitions() {
         const style = document.createElement('style');
