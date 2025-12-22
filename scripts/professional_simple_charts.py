@@ -6,7 +6,13 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from datetime import datetime
 import warnings
+import os
 warnings.filterwarnings('ignore')
+
+# Create output directory for images
+script_dir = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_DIR = os.path.join(script_dir, '..', 'assets', 'images')
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 plt.style.use('default')
 
@@ -47,7 +53,15 @@ plt.rcParams['grid.linewidth'] = 1.0
 plt.rcParams['lines.linewidth'] = 3.0
 
 def load_data():
-    df = pd.read_csv("tour_occ_nim__custom_19389427_linear_2_0.csv")
+    # Get the directory of this script
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    # Go up one level to project root, then into data directory
+    data_file = os.path.join(script_dir, '..', 'data', 'tour_occ_nim__custom_19389427_linear_2_0.csv')
+    
+    if not os.path.exists(data_file):
+        raise FileNotFoundError(f"Data file not found: {data_file}")
+    
+    df = pd.read_csv(data_file)
     
     clean_df = df.iloc[:, [5, 7, 9, 11, 13, 15]].copy()
     clean_df.columns = ['c_resid', 'unit', 'nace_r2', 'geo', 'time_period', 'obs_value']
@@ -137,7 +151,7 @@ def chart1_covid_impact_professional(df):
         ax.tick_params(axis='y', length=0)
         
         plt.tight_layout()
-        plt.savefig('covid_impact.png', dpi=300, bbox_inches='tight', 
+        plt.savefig(os.path.join(OUTPUT_DIR, 'covid_impact.png'), dpi=300, bbox_inches='tight', 
                    facecolor=PROFESSIONAL_COLORS['background'], edgecolor='none', pad_inches=0.3)
         plt.show()
 
@@ -307,7 +321,7 @@ def chart1_covid_impact_map(df):
                 }
             )
             
-            fig.write_image('covid_impact_map_journalism.png', width=1800, height=1400, scale=2)
+            fig.write_image(os.path.join(OUTPUT_DIR, 'covid_impact_map_journalism.png'), width=1800, height=1400, scale=2)
             
 def chart2_recovery_map_journalism(df):
     import plotly.express as px
@@ -487,7 +501,7 @@ def chart2_recovery_map_journalism(df):
                     }
                 )
                 
-                fig.write_image('recovery_2024_map_journalism.png', width=1800, height=1400, scale=2)
+                fig.write_image(os.path.join(OUTPUT_DIR, 'recovery_2024_map_journalism.png'), width=1800, height=1400, scale=2)
                 
 def chart2_recovery_trajectory_professional(df):
     
@@ -557,7 +571,7 @@ def chart2_recovery_trajectory_professional(df):
                             edgecolor='#4A4A4A', alpha=0.9, linewidth=2))
         
         plt.tight_layout()
-        plt.savefig('recovery_trajectory.png', dpi=300, bbox_inches='tight', 
+        plt.savefig(os.path.join(OUTPUT_DIR, 'recovery_trajectory.png'), dpi=300, bbox_inches='tight', 
                    facecolor=PROFESSIONAL_COLORS['background'], edgecolor='none', pad_inches=0.3)
         plt.show()
 
@@ -658,7 +672,7 @@ def chart3_country_performance_professional(df):
         legend.get_frame().set_edgecolor(PROFESSIONAL_COLORS['silver'])
         
         plt.tight_layout()
-        plt.savefig('3_country_performance.png', dpi=300, bbox_inches='tight', 
+        plt.savefig(os.path.join(OUTPUT_DIR, '3_country_performance.png'), dpi=300, bbox_inches='tight', 
                    facecolor=PROFESSIONAL_COLORS['background'], edgecolor='none', pad_inches=0.3)
         plt.show()
 
@@ -730,7 +744,7 @@ def chart4_accommodation_sectors_professional(df):
                             edgecolor='#4A4A4A', alpha=0.9, linewidth=2))
         
         plt.tight_layout()
-        plt.savefig('4_accommodation_sectors.png', dpi=300, bbox_inches='tight', 
+        plt.savefig(os.path.join(OUTPUT_DIR, '4_accommodation_sectors.png'), dpi=300, bbox_inches='tight', 
                    facecolor=PROFESSIONAL_COLORS['background'], edgecolor='none', pad_inches=0.3)
         plt.show()
 
@@ -844,7 +858,7 @@ def chart5_monthly_tourism_journey(df):
                                 edgecolor='#4A4A4A', alpha=0.9, linewidth=2))
         
         plt.tight_layout()
-        plt.savefig('6_monthly_journey.png', dpi=300, bbox_inches='tight', 
+        plt.savefig(os.path.join(OUTPUT_DIR, '6_monthly_journey.png'), dpi=300, bbox_inches='tight', 
                    facecolor=PROFESSIONAL_COLORS['background'], edgecolor='none', pad_inches=0.3)
         plt.show()
 
@@ -971,7 +985,7 @@ def chart7_domestic_vs_international_recovery(df):
                                     edgecolor='#4A4A4A', alpha=0.9, linewidth=2))
         
         plt.tight_layout()
-        plt.savefig('7_domestic_vs_international.png', dpi=300, bbox_inches='tight', 
+        plt.savefig(os.path.join(OUTPUT_DIR, '7_domestic_vs_international.png'), dpi=300, bbox_inches='tight', 
                    facecolor=PROFESSIONAL_COLORS['background'], edgecolor='none', pad_inches=0.3)
         plt.show()
 
@@ -1088,7 +1102,7 @@ def chart8_seasonal_patterns_comparison(df):
                             edgecolor='#4A4A4A', alpha=0.9, linewidth=2))
         
         plt.tight_layout()
-        plt.savefig('8_seasonal_patterns.png', dpi=300, bbox_inches='tight', 
+        plt.savefig(os.path.join(OUTPUT_DIR, '8_seasonal_patterns.png'), dpi=300, bbox_inches='tight', 
                    facecolor=PROFESSIONAL_COLORS['background'], edgecolor='none', pad_inches=0.3)
         plt.show()
 
