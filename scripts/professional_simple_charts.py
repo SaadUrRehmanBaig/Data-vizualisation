@@ -323,6 +323,29 @@ def chart1_covid_impact_map(df):
             
             fig.write_image(os.path.join(OUTPUT_DIR, 'covid_impact_map_journalism.png'), width=1800, height=1400, scale=2)
             
+            # Also save as HTML with responsive sizing
+            fig.update_layout(
+                width=None,  # Remove fixed width
+                height=None,  # Remove fixed height
+                autosize=True,  # Enable autosizing
+                margin=dict(t=80, b=60, l=40, r=120),  # Adjust margins for colorbar
+                coloraxis_colorbar={
+                    'title': {
+                        'text': 'Tourism Decline (%)', 
+                        'font': {'size': 14, 'family': 'Arial'}
+                    },
+                    'tickfont': {'size': 12, 'family': 'Arial'},
+                    'len': 0.8,
+                    'thickness': 20,
+                    'x': 0.98,  # Move colorbar closer to the plot
+                    'tickmode': 'array',
+                    'tickvals': [-70, -60, -50, -40, -30, -20],
+                    'ticktext': ['-70%', '-60%', '-50%', '-40%', '-30%', '-20%']
+                }
+            )
+            
+            fig.write_html(os.path.join(OUTPUT_DIR, 'covid_impact_map.html'))
+            
 def chart2_recovery_map_journalism(df):
     import plotly.express as px
     import plotly.graph_objects as go
@@ -502,6 +525,29 @@ def chart2_recovery_map_journalism(df):
                 )
                 
                 fig.write_image(os.path.join(OUTPUT_DIR, 'recovery_2024_map_journalism.png'), width=1800, height=1400, scale=2)
+                
+                # Also save as HTML with responsive sizing
+                fig.update_layout(
+                    width=None,  # Remove fixed width
+                    height=None,  # Remove fixed height
+                    autosize=True,  # Enable autosizing
+                    margin=dict(t=80, b=60, l=40, r=120),  # Adjust margins for colorbar
+                    coloraxis_colorbar={
+                        'title': {
+                            'text': '2024 vs 2019 (%)', 
+                            'font': {'size': 14, 'family': 'Arial'}
+                        },
+                        'tickfont': {'size': 12, 'family': 'Arial'},
+                        'len': 0.8,
+                        'thickness': 20,
+                        'x': 0.98,  # Move colorbar closer to the plot
+                        'tickmode': 'array',
+                        'tickvals': [-15, -10, -5, 0, 5, 10, 15],
+                        'ticktext': ['-15%', '-10%', '-5%', '0%', '+5%', '+10%', '+15%']
+                    }
+                )
+                
+                fig.write_html(os.path.join(OUTPUT_DIR, 'recovery_2024_map.html'))
                 
 def chart2_recovery_trajectory_professional(df):
     

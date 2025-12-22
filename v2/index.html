@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EU Tourism Recovery Dashboard</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="header-content">
+                <h1 class="main-title">EU Tourism Recovery Dashboard</h1>
+                <p class="subtitle">Rising from the Ashes: A Data-Driven Story of Crisis, Resilience, and Transformation (2019-2024)</p>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="dashboard-nav">
+            <div class="nav-container">
+                <button class="nav-btn active" data-section="overview">Overview</button>
+                <button class="nav-btn" data-section="crisis">Crisis Impact</button>
+                <button class="nav-btn" data-section="recovery">Recovery</button>
+                <button class="nav-btn" data-section="champions">Champions</button>
+                <button class="nav-btn" data-section="sectors">Sectors</button>
+                <button class="nav-btn" data-section="patterns">Patterns</button>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="dashboard-main">
+            <!-- Overview Section -->
+            <section id="overview" class="dashboard-section active">
+                <div class="section-header">
+                    <h2>The Phoenix Story</h2>
+                    <p>From a 95% collapse to an 18% peak above pre-pandemic levels</p>
+                </div>
+                
+                <div class="metrics-grid">
+                    <div class="metric-card crisis">
+                        <div class="metric-icon">📉</div>
+                        <div class="metric-value">-95%</div>
+                        <div class="metric-label">Peak Crisis Impact (April 2020)</div>
+                    </div>
+                    <div class="metric-card recovery">
+                        <div class="metric-icon">📈</div>
+                        <div class="metric-value">+18%</div>
+                        <div class="metric-label">Peak Performance (May 2024)</div>
+                    </div>
+                    <div class="metric-card timeline">
+                        <div class="metric-icon">⏱️</div>
+                        <div class="metric-value">3 Years</div>
+                        <div class="metric-label">Full Recovery Timeline</div>
+                    </div>
+                    <div class="metric-card growth">
+                        <div class="metric-icon">🏕️</div>
+                        <div class="metric-value">+38%</div>
+                        <div class="metric-label">Camping Sector Boom</div>
+                    </div>
+                </div>
+
+                <div class="story-timeline">
+                    <h3>The Recovery Journey</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-year">2019</div>
+                            <div class="timeline-content">
+                                <h4>The Golden Age</h4>
+                                <p>EU tourism at its peak - the last normal year</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item crisis-item">
+                            <div class="timeline-year">2020</div>
+                            <div class="timeline-content">
+                                <h4>The Great Collapse</h4>
+                                <p>95% decline in April - the darkest hour of European tourism</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-year">2021-2022</div>
+                            <div class="timeline-content">
+                                <h4>The Struggle</h4>
+                                <p>Gradual recovery begins - adaptation and innovation</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item recovery-item">
+                            <div class="timeline-year">2023</div>
+                            <div class="timeline-content">
+                                <h4>Full Recovery</h4>
+                                <p>Return to pre-pandemic levels - the breakthrough moment</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item success-item">
+                            <div class="timeline-year">2024</div>
+                            <div class="timeline-content">
+                                <h4>The Renaissance</h4>
+                                <p>18% peak above 2019 levels - stronger than ever before</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Crisis Impact Section -->
+            <section id="crisis" class="dashboard-section">
+                <div class="section-header">
+                    <h2>The Great Collapse (2020)</h2>
+                    <p>When the world stopped traveling</p>
+                </div>
+                
+                <div class="chart-container">
+                    <iframe src="../assets/images/covid_impact_map.html" width="100%" height="800" frameborder="0"></iframe>
+                    <div class="chart-insights">
+                        <h3>Key Insights</h3>
+                        <ul>
+                            <li><strong>Cyprus:</strong> 79% decline - worst affected EU member</li>
+                            <li><strong>Greece:</strong> 74% decline - islands stood deserted</li>
+                            <li><strong>Malta:</strong> 70% decline - tourism-dependent island hit hard</li>
+                            <li><strong>Spain:</strong> 69% decline - beaches empty, museums closed</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="chart-container">
+                    <iframe src="../assets/charts/covid_impact_interactive.html" width="100%" height="800" frameborder="0"></iframe>
+                    <p class="chart-caption">The geographic anatomy of tourism's darkest hour - deeper red indicates deeper wounds</p>
+                </div>
+            </section>
+
+            <!-- Recovery Section -->
+            <section id="recovery" class="dashboard-section">
+                <div class="section-header">
+                    <h2>The Phoenix Rises (2020-2024)</h2>
+                    <p>The most remarkable comeback in modern European economic history</p>
+                </div>
+                
+                <div class="chart-container">
+                    <img src="../assets/images/recovery_trajectory.png" alt="EU Tourism Recovery Trajectory" class="chart-image">
+                    <div class="recovery-milestones">
+                        <h3>Recovery Milestones</h3>
+                        <div class="milestone">
+                            <span class="milestone-period">2020-2021</span>
+                            <span class="milestone-desc">The Valley of Despair (-95% to -11%)</span>
+                        </div>
+                        <div class="milestone">
+                            <span class="milestone-period">2021-2022</span>
+                            <span class="milestone-desc">The First Steps (-11% to +1%)</span>
+                        </div>
+                        <div class="milestone">
+                            <span class="milestone-period">2022-2023</span>
+                            <span class="milestone-desc">The Breakthrough (+1% to +9%)</span>
+                        </div>
+                        <div class="milestone success">
+                            <span class="milestone-period">2023-2024</span>
+                            <span class="milestone-desc">The Renaissance (+9% to +18%)</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Champions Section -->
+            <section id="champions" class="dashboard-section">
+                <div class="section-header">
+                    <h2>The New Champions (2024)</h2>
+                    <p>Countries that didn't just recover, but emerged stronger than ever</p>
+                </div>
+                
+                <div class="champions-grid">
+                    <div class="champion-card gold">
+                        <div class="champion-rank">🥇</div>
+                        <div class="champion-country">Denmark</div>
+                        <div class="champion-growth">+20%</div>
+                    </div>
+                    <div class="champion-card silver">
+                        <div class="champion-rank">🥈</div>
+                        <div class="champion-country">Netherlands</div>
+                        <div class="champion-growth">+19%</div>
+                    </div>
+                    <div class="champion-card bronze">
+                        <div class="champion-rank">🥉</div>
+                        <div class="champion-country">Portugal</div>
+                        <div class="champion-growth">+15%</div>
+                    </div>
+                </div>
+
+                <div class="recovery-map">
+                    <iframe src="../assets/images/recovery_2024_map.html" width="100%" height="800" frameborder="0"></iframe>
+                    <p class="chart-caption">2024 performance shows who bounced back strongest - green indicates growth above 2019 levels</p>
+                </div>
+                <div class="chart-container">
+                    <iframe src="../assets/charts/country_performance_interactive.html" width="100%" height="800" frameborder="0"></iframe>
+                </div>
+            </section>
+
+            <!-- Sectors Section -->
+            <section id="sectors" class="dashboard-section">
+                <div class="section-header">
+                    <h2>The Great Transformation</h2>
+                    <p>How the pandemic changed not just where people traveled, but how they traveled</p>
+                </div>
+                
+                <div class="sector-cards">
+                    <div class="sector-card outdoor">
+                        <div class="sector-icon">🏕️</div>
+                        <div class="sector-name">Camping & Outdoor</div>
+                        <div class="sector-growth">+115%</div>
+                        <div class="sector-desc">The outdoor revolution! Europeans discovered the joy of sleeping under stars</div>
+                    </div>
+                    <div class="sector-card rentals">
+                        <div class="sector-icon">🏠</div>
+                        <div class="sector-name">Holiday Rentals</div>
+                        <div class="sector-growth">+25%</div>
+                        <div class="sector-desc">Home-away-from-home boom - space, privacy, and authentic experiences</div>
+                    </div>
+                    <div class="sector-card hotels">
+                        <div class="sector-icon">🏨</div>
+                        <div class="sector-name">Hotels</div>
+                        <div class="sector-growth">+17%</div>
+                        <div class="sector-desc">Traditional lodging adapted with contactless services and enhanced hygiene</div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <img src="../assets/images/4_accommodation_sectors.png" alt="Accommodation Sector Performance" class="chart-image">
+                </div>
+            </section>
+
+            <!-- Patterns Section -->
+            <section id="patterns" class="dashboard-section">
+                <div class="section-header">
+                    <h2>New Travel Rhythms</h2>
+                    <p>How Europeans learned to travel to a new beat</p>
+                </div>
+                
+                <div class="patterns-grid">
+                    <div class="chart-container">
+                        <img src="../assets/images/7_domestic_vs_international.png" alt="Domestic vs International Recovery" class="chart-image">
+                        <h3>The Tale of Two Tourists</h3>
+                        <p>Although domestic tourism recovered faster but International tourism (+8%) actually outperformed domestic tourism (+5%) in 2024</p>
+                    </div>
+                    
+                    <div class="chart-container">
+                        <img src="../assets/images/8_seasonal_patterns.png" alt="Seasonal Patterns" class="chart-image">
+                        <h3>The New Seasonality</h3>
+                        <p>August still remains the peak month for travel post pandemic</p>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <img src="../assets/images/6_monthly_journey.png" alt="Monthly Journey 2019 vs 2020" class="chart-image">
+                    <h3>The Tale of Two Years</h3>
+                    <p>2019 vs 2020 - the most dramatic before-and-after story in tourism history</p>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <div class="footer-content">
+                <p><strong>Data Source:</strong> Eurostat Official Tourism Statistics</p>
+                <p><strong>Analysis Period:</strong> 2019-2024 | <strong>Geographic Scope:</strong> EU Member States</p>
+                <p>This dashboard tells the story of the greatest comeback in modern European economic history</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../assets/js/script.js"></script>
+</body>
+</html>

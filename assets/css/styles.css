@@ -283,6 +283,25 @@ body {
     margin-bottom: 2rem;
 }
 
+.interactive-map,
+.recovery-map {
+    background: white;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.interactive-map iframe,
+.recovery-map iframe {
+    width: 100%;
+    height: 800px;
+    border: none;
+    border-radius: 8px;
+    background: white;
+}
+
 .chart-image {
     width: 100%;
     height: auto;
