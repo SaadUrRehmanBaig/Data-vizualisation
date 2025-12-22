@@ -27,25 +27,25 @@
 
 #### **Question 1: Champions of Recovery**
 **"Which EU27 countries achieved the strongest tourism recovery by 2024?"**
-- *Addressed in:* Act III (The New Champions) - `executive_3_country_performance.png`
+- *Addressed in:* Act III (The New Champions) - `3_country_performance.png`
 - *Reveals:* The strategic winners who didn't just recover but thrived
 - *Story Impact:* Shows that recovery wasn't uniform - it rewarded innovation and adaptation
 
 #### **Question 2: The Great Divide** 
 **"How do domestic and international tourist recovery patterns differ?"**
-- *Addressed in:* Act V (The Tale of Two Tourists) - `executive_7_domestic_vs_international.png`
+- *Addressed in:* Act V (The Tale of Two Tourists) - `7_domestic_vs_international.png`
 - *Reveals:* The fascinating subplot of how Europeans rediscovered home first
 - *Story Impact:* Demonstrates the importance of balanced tourism strategies
 
 #### **Question 3: Seasonal Evolution**
 **"How have seasonal tourism patterns evolved post-pandemic compared to 2019?"**
-- *Addressed in:* Act VI (The Rhythm of Recovery) - `executive_8_seasonal_patterns.png`
+- *Addressed in:* Act VI (The Rhythm of Recovery) - `8_seasonal_patterns.png`
 - *Reveals:* The new calendar of European travel - more distributed, more sustainable
 - *Story Impact:* Shows how crisis can reshape fundamental industry patterns
 
 #### **Question 4: Sector Transformation**
 **"Which accommodation sectors (hotels, rentals, camping) performed best in recovery?"**
-- *Addressed in:* Act IV (The Great Transformation) - `executive_4_accommodation_sectors.png`
+- *Addressed in:* Act IV (The Great Transformation) - `4_accommodation_sectors.png`
 - *Reveals:* The outdoor revolution and the rise of alternative accommodations
 - *Story Impact:* Illustrates how consumer preferences fundamentally shifted
 
@@ -121,9 +121,9 @@ Complete Story → Actionable Understanding
 ---
 
 ## 🎬 **Act II: The Anatomy of Recovery (2020-2024)**
-### Visualization: `executive_2_recovery_trajectory.png`
+### Visualization: `2_recovery_trajectory.png`
 
-![The Phoenix Rises](executive_2_recovery_trajectory.png)
+![The Phoenix Rises](2_recovery_trajectory.png)
 
 **What it reveals:** The most remarkable comeback story in modern European economic history
 
@@ -147,7 +147,7 @@ Complete Story → Actionable Understanding
 ## 🎬 **Act III: The New Champions (2024)**
 ### Visualization: `executive_3_country_performance.png`
 
-![The Recovery Champions](executive_3_country_performance.png)
+![The Recovery Champions](3_country_performance.png)
 
 **What it shows:** The winners of the greatest comeback in tourism history - who not only survived but thrived
 
@@ -176,7 +176,7 @@ Complete Story → Actionable Understanding
 ## 🎬 **Act IV: The Great Transformation**
 ### Visualization: `executive_4_accommodation_sectors.png`
 
-![The Sector Revolution](executive_4_accommodation_sectors.png)
+![The Sector Revolution](4_accommodation_sectors.png)
 
 **What it shows:** How the pandemic didn't just change where people traveled, but how they traveled
 
@@ -202,7 +202,7 @@ Complete Story → Actionable Understanding
 ## 🎬 **Act V: The Tale of Two Tourists**
 ### Visualization: `executive_7_domestic_vs_international.png`
 
-![Domestic vs International Recovery](executive_7_domestic_vs_international.png)
+![Domestic vs International Recovery](7_domestic_vs_international.png)
 
 **What it reveals:** The most fascinating subplot in our recovery story - how Europeans learned to love home first
 
@@ -223,7 +223,7 @@ Complete Story → Actionable Understanding
 ## 🎬 **Act VI: The Rhythm of Recovery**
 ### Visualization: `executive_8_seasonal_patterns.png`
 
-![The New Seasonality](executive_8_seasonal_patterns.png)
+![The New Seasonality](8_seasonal_patterns.png)
 
 **What it shows:** How the pandemic rewrote the calendar of European travel
 
@@ -248,7 +248,7 @@ Complete Story → Actionable Understanding
 ## 🎬 **Act VII: The Executive Summary**
 ### Visualization: `executive_5_summary_dashboard.png`
 
-![The Complete Story](executive_5_summary_dashboard.png)
+![The Complete Story](5_summary_dashboard.png)
 
 **What it shows:** The entire epic condensed into one powerful dashboard - crisis, recovery, transformation, and triumph
 
@@ -270,7 +270,7 @@ Complete Story → Actionable Understanding
 ## 🎬 **Epilogue: The Monthly Journey (2019 vs 2020)**
 ### Visualization: `executive_6_monthly_journey.png`
 
-![The Tale of Two Years](executive_6_monthly_journey.png)
+![The Tale of Two Years](6_monthly_journey.png)
 
 **What it shows:** The most dramatic before-and-after story in tourism history - month by month, the collapse and the memory of what was lost
 

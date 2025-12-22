@@ -10,7 +10,7 @@ warnings.filterwarnings('ignore')
 
 plt.style.use('default')
 
-EXECUTIVE_COLORS = {
+PROFESSIONAL_COLORS = {
     'primary_blue': '#2E4A6B',      # Deep professional blue
     'secondary_blue': '#4A6B8A',    # Medium blue
     'accent_blue': '#6B8BAA',       # Light blue
@@ -95,7 +95,7 @@ def chart1_covid_impact_professional(df):
         impact_sorted = pivot_data['pct_change'].sort_values()
         
         fig, ax = plt.subplots(figsize=(16, 12))
-        fig.patch.set_facecolor(EXECUTIVE_COLORS['background'])
+        fig.patch.set_facecolor(PROFESSIONAL_COLORS['background'])
         
         n_countries = len(impact_sorted)
         red_colors = []
@@ -116,29 +116,29 @@ def chart1_covid_impact_professional(df):
                    va='center', ha='right', fontweight='bold', 
                    color='white', fontsize=12)
         
-        ax.set_title('COVID-19 Impact on EU27 Tourism Markets\nTourist Arrivals Decline (2020 vs 2019 Baseline)', 
-                    fontsize=24, fontweight='bold', pad=30, color=EXECUTIVE_COLORS['text_primary'])
-        ax.set_xlabel('Percentage Decline (%)', fontsize=18, color=EXECUTIVE_COLORS['text_secondary'])
-        ax.set_ylabel('Market', fontsize=18, color=EXECUTIVE_COLORS['text_secondary'])
+        ax.set_title('COVID-19 Impact on EU Tourism Markets\nTourist Arrivals Decline (2020 vs 2019 Baseline)', 
+                    fontsize=24, fontweight='bold', pad=30, color=PROFESSIONAL_COLORS['text_primary'])
+        ax.set_xlabel('Percentage Decline (%)', fontsize=18, color=PROFESSIONAL_COLORS['text_secondary'])
+        ax.set_ylabel('Market', fontsize=18, color=PROFESSIONAL_COLORS['text_secondary'])
         
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
-        ax.spines['left'].set_color(EXECUTIVE_COLORS['silver'])
-        ax.spines['bottom'].set_color(EXECUTIVE_COLORS['silver'])
+        ax.spines['left'].set_color(PROFESSIONAL_COLORS['silver'])
+        ax.spines['bottom'].set_color(PROFESSIONAL_COLORS['silver'])
         ax.spines['left'].set_linewidth(1.5)
         ax.spines['bottom'].set_linewidth(1.5)
         
-        ax.grid(axis='x', alpha=0.4, linestyle='-', linewidth=1.0, color=EXECUTIVE_COLORS['grid'])
+        ax.grid(axis='x', alpha=0.4, linestyle='-', linewidth=1.0, color=PROFESSIONAL_COLORS['grid'])
         ax.set_axisbelow(True)
         ax.set_xlim(min(impact_sorted.values) * 1.1, 0)
         
-        ax.tick_params(axis='both', which='major', labelsize=12, colors=EXECUTIVE_COLORS['text_secondary'])
-        ax.tick_params(axis='x', length=8, width=1.5, color=EXECUTIVE_COLORS['silver'])
+        ax.tick_params(axis='both', which='major', labelsize=12, colors=PROFESSIONAL_COLORS['text_secondary'])
+        ax.tick_params(axis='x', length=8, width=1.5, color=PROFESSIONAL_COLORS['silver'])
         ax.tick_params(axis='y', length=0)
         
         plt.tight_layout()
         plt.savefig('covid_impact.png', dpi=300, bbox_inches='tight', 
-                   facecolor=EXECUTIVE_COLORS['background'], edgecolor='none', pad_inches=0.3)
+                   facecolor=PROFESSIONAL_COLORS['background'], edgecolor='none', pad_inches=0.3)
         plt.show()
 
 def chart1_covid_impact_map(df):
@@ -280,7 +280,7 @@ def chart1_covid_impact_map(df):
             # Update layout for journalism standards
             fig.update_layout(
                 title={
-                    'text': '<b>COVID-19 DEVASTATED EU27 TOURISM</b><br><span style="font-size:18px">Worst-affected countries in 2020</span>',
+                    'text': '<b>COVID-19 DEVASTATED EU TOURISM</b><br><span style="font-size:18px">Worst-affected countries in 2020</span>',
                     'x': 0.5,
                     'xanchor': 'center',
                     'y': 0.95,
@@ -460,7 +460,7 @@ def chart2_recovery_map_journalism(df):
                 # Update layout for journalism standards
                 fig.update_layout(
                     title={
-                        'text': '<b>EU27 TOURISM: THE GREAT RECOVERY</b><br><span style="font-size:18px">2024 performance shows who bounced back strongest</span>',
+                        'text': '<b>EU TOURISM: THE GREAT RECOVERY</b><br><span style="font-size:18px">2024 performance shows who bounced back strongest</span>',
                         'x': 0.5,
                         'xanchor': 'center',
                         'y': 0.95,
@@ -504,10 +504,10 @@ def chart2_recovery_trajectory_professional(df):
         monthly_recovery = recovery_data.groupby('date')['obs_value'].mean()
         
         fig, ax = plt.subplots(figsize=(18, 12))
-        fig.patch.set_facecolor(EXECUTIVE_COLORS['background'])
+        fig.patch.set_facecolor(PROFESSIONAL_COLORS['background'])
         
-        recovery_color = EXECUTIVE_COLORS['primary_blue']
-        baseline_color = EXECUTIVE_COLORS['primary_red']
+        recovery_color = PROFESSIONAL_COLORS['primary_blue']
+        baseline_color = PROFESSIONAL_COLORS['primary_red']
         
         ax.plot(monthly_recovery.index, monthly_recovery.values, 
                color=recovery_color, linewidth=5, marker='o', markersize=10,
@@ -526,39 +526,39 @@ def chart2_recovery_trajectory_professional(df):
                   alpha=0.6, color=recovery_bg, label='Full Recovery Period', zorder=1)
         
         ax.set_title('European Tourism Recovery Trajectory\nPerformance vs Pre-Pandemic Baseline (2019)', 
-                    fontsize=26, fontweight='bold', pad=35, color=EXECUTIVE_COLORS['text_primary'])
-        ax.set_xlabel('Year', fontsize=18, color=EXECUTIVE_COLORS['text_secondary'])
-        ax.set_ylabel('Performance vs 2019 Baseline (%)', fontsize=18, color=EXECUTIVE_COLORS['text_secondary'])
+                    fontsize=26, fontweight='bold', pad=35, color=PROFESSIONAL_COLORS['text_primary'])
+        ax.set_xlabel('Year', fontsize=18, color=PROFESSIONAL_COLORS['text_secondary'])
+        ax.set_ylabel('Performance vs 2019 Baseline (%)', fontsize=18, color=PROFESSIONAL_COLORS['text_secondary'])
         
         legend = ax.legend(loc='lower right', frameon=True, fancybox=True, 
                           shadow=True, fontsize=14, framealpha=0.95)
-        legend.get_frame().set_facecolor(EXECUTIVE_COLORS['background'])
-        legend.get_frame().set_edgecolor(EXECUTIVE_COLORS['silver'])
+        legend.get_frame().set_facecolor(PROFESSIONAL_COLORS['background'])
+        legend.get_frame().set_edgecolor(PROFESSIONAL_COLORS['silver'])
         
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
-        ax.spines['left'].set_color(EXECUTIVE_COLORS['silver'])
-        ax.spines['bottom'].set_color(EXECUTIVE_COLORS['silver'])
+        ax.spines['left'].set_color(PROFESSIONAL_COLORS['silver'])
+        ax.spines['bottom'].set_color(PROFESSIONAL_COLORS['silver'])
         ax.spines['left'].set_linewidth(1.5)
         ax.spines['bottom'].set_linewidth(1.5)
         
-        ax.grid(True, alpha=0.4, linestyle='-', linewidth=1.0, color=EXECUTIVE_COLORS['grid'], zorder=0)
+        ax.grid(True, alpha=0.4, linestyle='-', linewidth=1.0, color=PROFESSIONAL_COLORS['grid'], zorder=0)
         ax.set_axisbelow(True)
         
-        ax.tick_params(axis='both', which='major', labelsize=14, colors=EXECUTIVE_COLORS['text_secondary'])
-        ax.tick_params(axis='both', length=8, width=1.5, color=EXECUTIVE_COLORS['silver'])
+        ax.tick_params(axis='both', which='major', labelsize=14, colors=PROFESSIONAL_COLORS['text_secondary'])
+        ax.tick_params(axis='both', length=8, width=1.5, color=PROFESSIONAL_COLORS['silver'])
         
         ax.annotate('Full Recovery\nAchieved', 
                    xy=(pd.to_datetime('2023-01'), 0), 
                    xytext=(pd.to_datetime('2021-09'), 15),
-                   arrowprops=dict(arrowstyle='->', color=baseline_color, lw=3),
-                   fontsize=14, ha='center', color=baseline_color, fontweight='bold',
-                   bbox=dict(boxstyle="round,pad=0.5", facecolor=EXECUTIVE_COLORS['background'], 
-                            edgecolor=baseline_color, alpha=0.9, linewidth=2))
+                   arrowprops=dict(arrowstyle='->', color='#4A4A4A', lw=3),
+                   fontsize=14, ha='center', color='#4A4A4A', fontweight='bold',
+                   bbox=dict(boxstyle="round,pad=0.5", facecolor=PROFESSIONAL_COLORS['background'], 
+                            edgecolor='#4A4A4A', alpha=0.9, linewidth=2))
         
         plt.tight_layout()
         plt.savefig('recovery_trajectory.png', dpi=300, bbox_inches='tight', 
-                   facecolor=EXECUTIVE_COLORS['background'], edgecolor='none', pad_inches=0.3)
+                   facecolor=PROFESSIONAL_COLORS['background'], edgecolor='none', pad_inches=0.3)
         plt.show()
 
 def chart3_country_performance_professional(df):     
@@ -591,16 +591,16 @@ def chart3_country_performance_professional(df):
         }
         
         fig, ax = plt.subplots(figsize=(16, 12))
-        fig.patch.set_facecolor(EXECUTIVE_COLORS['background'])
+        fig.patch.set_facecolor(PROFESSIONAL_COLORS['background'])
         
         colors = []
         for x in performance.values:
             if x < 0: 
                 colors.append('#C85450')                             # Same light red as COVID chart for negative
             elif x > 15: 
-                colors.append(EXECUTIVE_COLORS['primary_green'])     # Exceptional - darkest green
+                colors.append(PROFESSIONAL_COLORS['primary_green'])     # Exceptional - darkest green
             elif x > 10: 
-                colors.append(EXECUTIVE_COLORS['secondary_green'])   # Strong - medium green
+                colors.append(PROFESSIONAL_COLORS['secondary_green'])   # Strong - medium green
             elif x > 5: 
                 colors.append('#5A9B6A')                             # Good - lighter green
             else: 
@@ -623,43 +623,43 @@ def chart3_country_performance_professional(df):
                    va='center', ha=ha, fontweight='bold', fontsize=12, 
                    color=color)
         
-        ax.axvline(x=0, color=EXECUTIVE_COLORS['primary_red'], linestyle='-', 
+        ax.axvline(x=0, color=PROFESSIONAL_COLORS['primary_red'], linestyle='-', 
                   linewidth=3, alpha=0.8, zorder=2)
         
         ax.set_title('Market Performance in 2024 vs Pre-Pandemic Baseline\nPercentage Change Compared to 2019 Performance', 
-                    fontsize=24, fontweight='bold', pad=30, color=EXECUTIVE_COLORS['text_primary'])
-        ax.set_xlabel('Performance vs 2019 Baseline (%)', fontsize=18, color=EXECUTIVE_COLORS['text_secondary'])
-        ax.set_ylabel('Market', fontsize=18, color=EXECUTIVE_COLORS['text_secondary'])
+                    fontsize=24, fontweight='bold', pad=30, color=PROFESSIONAL_COLORS['text_primary'])
+        ax.set_xlabel('Performance vs 2019 Baseline (%)', fontsize=18, color=PROFESSIONAL_COLORS['text_secondary'])
+        ax.set_ylabel('Market', fontsize=18, color=PROFESSIONAL_COLORS['text_secondary'])
         
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
-        ax.spines['left'].set_color(EXECUTIVE_COLORS['silver'])
-        ax.spines['bottom'].set_color(EXECUTIVE_COLORS['silver'])
+        ax.spines['left'].set_color(PROFESSIONAL_COLORS['silver'])
+        ax.spines['bottom'].set_color(PROFESSIONAL_COLORS['silver'])
         ax.spines['left'].set_linewidth(1.5)
         ax.spines['bottom'].set_linewidth(1.5)
         
-        ax.grid(axis='x', alpha=0.4, linestyle='-', linewidth=1.0, color=EXECUTIVE_COLORS['grid'], zorder=0)
+        ax.grid(axis='x', alpha=0.4, linestyle='-', linewidth=1.0, color=PROFESSIONAL_COLORS['grid'], zorder=0)
         ax.set_axisbelow(True)
         
-        ax.tick_params(axis='both', which='major', labelsize=12, colors=EXECUTIVE_COLORS['text_secondary'])
-        ax.tick_params(axis='x', length=8, width=1.5, color=EXECUTIVE_COLORS['silver'])
+        ax.tick_params(axis='both', which='major', labelsize=12, colors=PROFESSIONAL_COLORS['text_secondary'])
+        ax.tick_params(axis='x', length=8, width=1.5, color=PROFESSIONAL_COLORS['silver'])
         ax.tick_params(axis='y', length=0)
         
         legend_elements = [
-            plt.Rectangle((0,0),1,1, facecolor=EXECUTIVE_COLORS['primary_green'], alpha=0.85, label='Exceptional Growth (>15%)'),
-            plt.Rectangle((0,0),1,1, facecolor=EXECUTIVE_COLORS['secondary_green'], alpha=0.85, label='Strong Growth (10-15%)'),
+            plt.Rectangle((0,0),1,1, facecolor=PROFESSIONAL_COLORS['primary_green'], alpha=0.85, label='Exceptional Growth (>15%)'),
+            plt.Rectangle((0,0),1,1, facecolor=PROFESSIONAL_COLORS['secondary_green'], alpha=0.85, label='Strong Growth (10-15%)'),
             plt.Rectangle((0,0),1,1, facecolor='#5A9B6A', alpha=0.85, label='Good Growth (5-10%)'),
             plt.Rectangle((0,0),1,1, facecolor='#7BB88A', alpha=0.85, label='Modest Growth (0-5%)'),
             plt.Rectangle((0,0),1,1, facecolor='#C85450', alpha=0.85, label='Below Baseline (<0%)')
         ]
         legend = ax.legend(handles=legend_elements, loc='upper right', frameon=True, 
                           fancybox=True, shadow=True, fontsize=12, framealpha=0.95)
-        legend.get_frame().set_facecolor(EXECUTIVE_COLORS['background'])
-        legend.get_frame().set_edgecolor(EXECUTIVE_COLORS['silver'])
+        legend.get_frame().set_facecolor(PROFESSIONAL_COLORS['background'])
+        legend.get_frame().set_edgecolor(PROFESSIONAL_COLORS['silver'])
         
         plt.tight_layout()
-        plt.savefig('executive_3_country_performance.png', dpi=300, bbox_inches='tight', 
-                   facecolor=EXECUTIVE_COLORS['background'], edgecolor='none', pad_inches=0.3)
+        plt.savefig('3_country_performance.png', dpi=300, bbox_inches='tight', 
+                   facecolor=PROFESSIONAL_COLORS['background'], edgecolor='none', pad_inches=0.3)
         plt.show()
 
 def chart4_accommodation_sectors_professional(df):
@@ -686,7 +686,7 @@ def chart4_accommodation_sectors_professional(df):
         names = [sector_names[sector] for sector in ordered_sectors]
         
         fig, ax = plt.subplots(figsize=(14, 12))
-        fig.patch.set_facecolor(EXECUTIVE_COLORS['background'])
+        fig.patch.set_facecolor(PROFESSIONAL_COLORS['background'])
         
         # Beautiful gradient colors - warm to cool representing growth levels
         colors = ['#2ECC71',    # Emerald green - Camping (highest growth, positive growth)
@@ -699,39 +699,39 @@ def chart4_accommodation_sectors_professional(df):
         for bar, value in zip(bars, values):
             ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 4, 
                    f'+{value:.0f}%', ha='center', va='bottom', 
-                   fontweight='bold', fontsize=18, color=EXECUTIVE_COLORS['text_primary'])
+                   fontweight='bold', fontsize=18, color=PROFESSIONAL_COLORS['text_primary'])
         
         ax.set_title('Accommodation Sector Performance in 2024\nGrowth vs Pre-Pandemic Baseline (2019)', 
-                    fontsize=24, fontweight='bold', pad=35, color=EXECUTIVE_COLORS['text_primary'])
-        ax.set_ylabel('Growth vs 2019 Baseline (%)', fontsize=18, color=EXECUTIVE_COLORS['text_secondary'])
-        ax.set_xlabel('Accommodation Sector', fontsize=18, color=EXECUTIVE_COLORS['text_secondary'])
+                    fontsize=24, fontweight='bold', pad=35, color=PROFESSIONAL_COLORS['text_primary'])
+        ax.set_ylabel('Growth vs 2019 Baseline (%)', fontsize=18, color=PROFESSIONAL_COLORS['text_secondary'])
+        ax.set_xlabel('Accommodation Sector', fontsize=18, color=PROFESSIONAL_COLORS['text_secondary'])
         
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
-        ax.spines['left'].set_color(EXECUTIVE_COLORS['silver'])
-        ax.spines['bottom'].set_color(EXECUTIVE_COLORS['silver'])
+        ax.spines['left'].set_color(PROFESSIONAL_COLORS['silver'])
+        ax.spines['bottom'].set_color(PROFESSIONAL_COLORS['silver'])
         ax.spines['left'].set_linewidth(1.5)
         ax.spines['bottom'].set_linewidth(1.5)
         
-        ax.grid(axis='y', alpha=0.4, linestyle='-', linewidth=1.0, color=EXECUTIVE_COLORS['grid'], zorder=0)
+        ax.grid(axis='y', alpha=0.4, linestyle='-', linewidth=1.0, color=PROFESSIONAL_COLORS['grid'], zorder=0)
         ax.set_axisbelow(True)
         ax.set_ylim(0, max(values) * 1.25)
         
-        ax.tick_params(axis='both', which='major', labelsize=14, colors=EXECUTIVE_COLORS['text_secondary'])
-        ax.tick_params(axis='y', length=8, width=1.5, color=EXECUTIVE_COLORS['silver'])
+        ax.tick_params(axis='both', which='major', labelsize=14, colors=PROFESSIONAL_COLORS['text_secondary'])
+        ax.tick_params(axis='y', length=8, width=1.5, color=PROFESSIONAL_COLORS['silver'])
         ax.tick_params(axis='x', length=0)
         
         ax.annotate('Outdoor Tourism\nRevolution', 
                    xy=(0, values[0]), 
                    xytext=(1, values[0] * 0.7),
-                   arrowprops=dict(arrowstyle='->', color='#34495E', lw=3),
-                   fontsize=15, ha='center', color='#34495E', fontweight='bold',
-                   bbox=dict(boxstyle="round,pad=0.5", facecolor=EXECUTIVE_COLORS['background'], 
-                            edgecolor='#34495E', alpha=0.9, linewidth=2))
+                   arrowprops=dict(arrowstyle='->', color='#4A4A4A', lw=3),
+                   fontsize=15, ha='center', color='#4A4A4A', fontweight='bold',
+                   bbox=dict(boxstyle="round,pad=0.5", facecolor=PROFESSIONAL_COLORS['background'], 
+                            edgecolor='#4A4A4A', alpha=0.9, linewidth=2))
         
         plt.tight_layout()
-        plt.savefig('executive_4_accommodation_sectors.png', dpi=300, bbox_inches='tight', 
-                   facecolor=EXECUTIVE_COLORS['background'], edgecolor='none', pad_inches=0.3)
+        plt.savefig('4_accommodation_sectors.png', dpi=300, bbox_inches='tight', 
+                   facecolor=PROFESSIONAL_COLORS['background'], edgecolor='none', pad_inches=0.3)
         plt.show()
 
 def chart5_monthly_tourism_journey(df):
@@ -751,7 +751,7 @@ def chart5_monthly_tourism_journey(df):
         
         # Create C-suite executive visualization
         fig, ax = plt.subplots(figsize=(16, 10))
-        fig.patch.set_facecolor(EXECUTIVE_COLORS['background'])
+        fig.patch.set_facecolor(PROFESSIONAL_COLORS['background'])
         
         # Month labels for x-axis
         months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
@@ -759,7 +759,7 @@ def chart5_monthly_tourism_journey(df):
         
         # Plot only 2019 and 2020
         years_colors = {
-            2019: (EXECUTIVE_COLORS['charcoal'], 'o', '2019 (Baseline Year)'),
+            2019: (PROFESSIONAL_COLORS['charcoal'], 'o', '2019 (Baseline Year)'),
             2020: ('#C85450', 's', '2020 (Crisis Year)')
         }
         
@@ -788,58 +788,64 @@ def chart5_monthly_tourism_journey(df):
                        label=label, alpha=0.9, markerfacecolor='white', 
                        markeredgecolor=color, markeredgewidth=3)
         
-        # C-suite title styling
-        ax.set_title('EU27 Tourism: 2019 Baseline vs 2020 Crisis\nMonthly Performance Comparison', 
-                    fontsize=24, fontweight='bold', pad=30, color=EXECUTIVE_COLORS['text_primary'])
-        ax.set_xlabel('Month', fontsize=18, color=EXECUTIVE_COLORS['text_secondary'])
-        ax.set_ylabel('Tourist Arrivals (Millions)', fontsize=18, color=EXECUTIVE_COLORS['text_secondary'])
+        ax.set_title('EU Tourism: 2019 Baseline vs 2020 Crisis\nMonthly Performance Comparison', 
+                    fontsize=24, fontweight='bold', pad=30, color=PROFESSIONAL_COLORS['text_primary'])
+        ax.set_xlabel('Month', fontsize=18, color=PROFESSIONAL_COLORS['text_secondary'])
+        ax.set_ylabel('Tourist Arrivals (Millions)', fontsize=18, color=PROFESSIONAL_COLORS['text_secondary'])
         
         # Set month labels on x-axis
         ax.set_xticks(range(1, 13))
         ax.set_xticklabels(months)
         
-        # Executive legend
         legend = ax.legend(loc='upper right', frameon=True, fancybox=True, 
                           shadow=True, fontsize=16, framealpha=0.95)
-        legend.get_frame().set_facecolor(EXECUTIVE_COLORS['background'])
-        legend.get_frame().set_edgecolor(EXECUTIVE_COLORS['silver'])
+        legend.get_frame().set_facecolor(PROFESSIONAL_COLORS['background'])
+        legend.get_frame().set_edgecolor(PROFESSIONAL_COLORS['silver'])
         
-        # Executive styling
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
-        ax.spines['left'].set_color(EXECUTIVE_COLORS['silver'])
-        ax.spines['bottom'].set_color(EXECUTIVE_COLORS['silver'])
+        ax.spines['left'].set_color(PROFESSIONAL_COLORS['silver'])
+        ax.spines['bottom'].set_color(PROFESSIONAL_COLORS['silver'])
         ax.spines['left'].set_linewidth(1.5)
         ax.spines['bottom'].set_linewidth(1.5)
         
-        # Executive grid
-        ax.grid(True, alpha=0.4, linestyle='-', linewidth=1.0, color=EXECUTIVE_COLORS['grid'], zorder=0)
+        ax.grid(True, alpha=0.4, linestyle='-', linewidth=1.0, color=PROFESSIONAL_COLORS['grid'], zorder=0)
         ax.set_axisbelow(True)
         
-        # Executive tick styling
-        ax.tick_params(axis='both', which='major', labelsize=14, colors=EXECUTIVE_COLORS['text_secondary'])
-        ax.tick_params(axis='both', length=8, width=1.5, color=EXECUTIVE_COLORS['silver'])
+        ax.tick_params(axis='both', which='major', labelsize=14, colors=PROFESSIONAL_COLORS['text_secondary'])
+        ax.tick_params(axis='both', length=8, width=1.5, color=PROFESSIONAL_COLORS['silver'])
         
-        # Executive annotations for key insights
-        ax.annotate('Normal Summer\nPeak Season', 
-                   xy=(7, 80), 
-                   xytext=(9, 90),
-                   arrowprops=dict(arrowstyle='->', color=EXECUTIVE_COLORS['charcoal'], lw=2.5),
-                   fontsize=14, ha='center', color=EXECUTIVE_COLORS['charcoal'], fontweight='bold',
-                   bbox=dict(boxstyle="round,pad=0.5", facecolor=EXECUTIVE_COLORS['background'], 
-                            edgecolor=EXECUTIVE_COLORS['charcoal'], alpha=0.9, linewidth=2))
+        # Get actual data values for annotations
+        baseline_2019 = monthly_totals[monthly_totals['year'] == 2019].copy()
+        crisis_2020 = monthly_totals[monthly_totals['year'] == 2020].copy()
         
-        ax.annotate('COVID-19\nLockdown Impact', 
-                   xy=(4, 15), 
-                   xytext=(2, 35),
-                   arrowprops=dict(arrowstyle='->', color='#C85450', lw=2.5),
-                   fontsize=14, ha='center', color='#C85450', fontweight='bold',
-                   bbox=dict(boxstyle="round,pad=0.5", facecolor=EXECUTIVE_COLORS['background'], 
-                            edgecolor='#C85450', alpha=0.9, linewidth=2))
+        # Find August 2019 peak (month 8) for summer annotation
+        aug_2019 = baseline_2019[baseline_2019['month'] == 8]
+        if not aug_2019.empty:
+            aug_value = aug_2019['obs_value'].iloc[0]
+            ax.annotate('Normal Summer\nPeak Season', 
+                       xy=(8, aug_value), 
+                       xytext=(10.5, aug_value - 100000000),
+                       arrowprops=dict(arrowstyle='->', color='#4A4A4A', lw=2.5),
+                       fontsize=14, ha='center', color='#4A4A4A', fontweight='bold',
+                       bbox=dict(boxstyle="round,pad=0.5", facecolor=PROFESSIONAL_COLORS['background'], 
+                                edgecolor='#4A4A4A', alpha=0.9, linewidth=2))
+        
+        # Find March 2020 lockdown impact (month 3) for COVID annotation
+        mar_2020 = crisis_2020[crisis_2020['month'] == 3]
+        if not mar_2020.empty:
+            mar_value = mar_2020['obs_value'].iloc[0]
+            ax.annotate('COVID-19\nLockdown Impact', 
+                       xy=(3, mar_value), 
+                       xytext=(1.5, mar_value - 2.5),
+                       arrowprops=dict(arrowstyle='->', color='#4A4A4A', lw=2.5),
+                       fontsize=14, ha='center', color='#4A4A4A', fontweight='bold',
+                       bbox=dict(boxstyle="round,pad=0.5", facecolor=PROFESSIONAL_COLORS['background'], 
+                                edgecolor='#4A4A4A', alpha=0.9, linewidth=2))
         
         plt.tight_layout()
-        plt.savefig('executive_6_monthly_journey.png', dpi=300, bbox_inches='tight', 
-                   facecolor=EXECUTIVE_COLORS['background'], edgecolor='none', pad_inches=0.3)
+        plt.savefig('6_monthly_journey.png', dpi=300, bbox_inches='tight', 
+                   facecolor=PROFESSIONAL_COLORS['background'], edgecolor='none', pad_inches=0.3)
         plt.show()
 
 def chart6_executive_summary_professional(df):
@@ -847,11 +853,11 @@ def chart6_executive_summary_professional(df):
     
     # Create C-suite executive summary visualization
     fig = plt.figure(figsize=(20, 14))
-    fig.patch.set_facecolor(EXECUTIVE_COLORS['background'])
+    fig.patch.set_facecolor(PROFESSIONAL_COLORS['background'])
     
     # Executive title
-    fig.suptitle('EU27 Tourism Recovery: Executive Summary (2019-2024)', 
-                fontsize=30, fontweight='bold', y=0.97, color=EXECUTIVE_COLORS['text_primary'])
+    fig.suptitle('EU Tourism Recovery: Executive Summary (2019-2024)', 
+                fontsize=30, fontweight='bold', y=0.97, color=PROFESSIONAL_COLORS['text_primary'])
     
     # Executive grid layout
     gs = fig.add_gridspec(2, 3, hspace=0.45, wspace=0.4, 
@@ -870,23 +876,23 @@ def chart6_executive_summary_professional(df):
     
     ax1.set_title('Crisis Impact (2020)', fontsize=18, fontweight='bold', 
                  color='#C85450', pad=20)  # Using the lighter red for title
-    ax1.set_xlabel('% Decline vs 2019', fontsize=14, color=EXECUTIVE_COLORS['text_secondary'])
-    ax1.grid(axis='x', alpha=0.4, color=EXECUTIVE_COLORS['grid'])
+    ax1.set_xlabel('% Decline vs 2019', fontsize=14, color=PROFESSIONAL_COLORS['text_secondary'])
+    ax1.grid(axis='x', alpha=0.4, color=PROFESSIONAL_COLORS['grid'])
     ax1.spines['top'].set_visible(False)
     ax1.spines['right'].set_visible(False)
-    ax1.spines['left'].set_color(EXECUTIVE_COLORS['silver'])
-    ax1.spines['bottom'].set_color(EXECUTIVE_COLORS['silver'])
-    ax1.tick_params(colors=EXECUTIVE_COLORS['text_secondary'], labelsize=12)
-    ax1.set_facecolor(EXECUTIVE_COLORS['background'])
+    ax1.spines['left'].set_color(PROFESSIONAL_COLORS['silver'])
+    ax1.spines['bottom'].set_color(PROFESSIONAL_COLORS['silver'])
+    ax1.tick_params(colors=PROFESSIONAL_COLORS['text_secondary'], labelsize=12)
+    ax1.set_facecolor(PROFESSIONAL_COLORS['background'])
     
     # Panel 2: Recovery Timeline - Executive blue
     ax2 = fig.add_subplot(gs[0, 1])
     years = [2020, 2021, 2022, 2023, 2024]
     eu_recovery = [-55, -35, -15, -2, +8]
-    recovery_color = EXECUTIVE_COLORS['primary_blue']
+    recovery_color = PROFESSIONAL_COLORS['primary_blue']
     ax2.plot(years, eu_recovery, color=recovery_color, linewidth=5, marker='o', markersize=12,
             markerfacecolor='white', markeredgecolor=recovery_color, markeredgewidth=3.5)
-    ax2.axhline(y=0, color=EXECUTIVE_COLORS['primary_red'], linestyle='--', linewidth=3, alpha=0.8)
+    ax2.axhline(y=0, color=PROFESSIONAL_COLORS['primary_red'], linestyle='--', linewidth=3, alpha=0.8)
     
     # Add visible background shading for crisis and recovery periods
     ax2.axvspan(2020, 2021.5, alpha=0.4, color='#FFD6D6', zorder=0)  # Crisis period - visible red
@@ -894,63 +900,63 @@ def chart6_executive_summary_professional(df):
     
     ax2.set_title('EU Recovery Timeline', fontsize=18, fontweight='bold', 
                  color=recovery_color, pad=20)
-    ax2.set_ylabel('% Change vs 2019', fontsize=14, color=EXECUTIVE_COLORS['text_secondary'])
-    ax2.grid(True, alpha=0.4, color=EXECUTIVE_COLORS['grid'])
+    ax2.set_ylabel('% Change vs 2019', fontsize=14, color=PROFESSIONAL_COLORS['text_secondary'])
+    ax2.grid(True, alpha=0.4, color=PROFESSIONAL_COLORS['grid'])
     ax2.spines['top'].set_visible(False)
     ax2.spines['right'].set_visible(False)
-    ax2.spines['left'].set_color(EXECUTIVE_COLORS['silver'])
-    ax2.spines['bottom'].set_color(EXECUTIVE_COLORS['silver'])
-    ax2.tick_params(colors=EXECUTIVE_COLORS['text_secondary'], labelsize=12)
-    ax2.set_facecolor(EXECUTIVE_COLORS['background'])
+    ax2.spines['left'].set_color(PROFESSIONAL_COLORS['silver'])
+    ax2.spines['bottom'].set_color(PROFESSIONAL_COLORS['silver'])
+    ax2.tick_params(colors=PROFESSIONAL_COLORS['text_secondary'], labelsize=12)
+    ax2.set_facecolor(PROFESSIONAL_COLORS['background'])
     
     # Panel 3: 2024 Winners - Executive green gradient
     ax3 = fig.add_subplot(gs[0, 2])
     winners = ['Netherlands', 'Portugal', 'Croatia', 'Italy', 'Spain']
     winner_values = [19, 15, 14, 10, 9]
-    colors3 = [EXECUTIVE_COLORS['primary_green'], EXECUTIVE_COLORS['primary_green'], 
-               EXECUTIVE_COLORS['secondary_green'], '#5A9B6A', '#7BB88A']  # Better green gradient
+    colors3 = [PROFESSIONAL_COLORS['primary_green'], PROFESSIONAL_COLORS['primary_green'], 
+               PROFESSIONAL_COLORS['secondary_green'], '#5A9B6A', '#7BB88A']  # Better green gradient
     bars3 = ax3.bar(winners, winner_values, color=colors3, alpha=0.85, width=0.65)
     
     for bar, value in zip(bars3, winner_values):
         ax3.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.5, 
                 f'+{value}%', ha='center', va='bottom', fontweight='bold', 
-                fontsize=13, color=EXECUTIVE_COLORS['text_primary'])
+                fontsize=13, color=PROFESSIONAL_COLORS['text_primary'])
     
     ax3.set_title('2024 Performance Leaders', fontsize=18, fontweight='bold', 
-                 color=EXECUTIVE_COLORS['primary_green'], pad=20)
-    ax3.set_ylabel('% Above 2019 Baseline', fontsize=14, color=EXECUTIVE_COLORS['text_secondary'])
+                 color=PROFESSIONAL_COLORS['primary_green'], pad=20)
+    ax3.set_ylabel('% Above 2019 Baseline', fontsize=14, color=PROFESSIONAL_COLORS['text_secondary'])
     plt.setp(ax3.get_xticklabels(), rotation=45, ha='right')
-    ax3.grid(axis='y', alpha=0.4, color=EXECUTIVE_COLORS['grid'])
+    ax3.grid(axis='y', alpha=0.4, color=PROFESSIONAL_COLORS['grid'])
     ax3.spines['top'].set_visible(False)
     ax3.spines['right'].set_visible(False)
-    ax3.spines['left'].set_color(EXECUTIVE_COLORS['silver'])
-    ax3.spines['bottom'].set_color(EXECUTIVE_COLORS['silver'])
-    ax3.tick_params(colors=EXECUTIVE_COLORS['text_secondary'], labelsize=12)
-    ax3.set_facecolor(EXECUTIVE_COLORS['background'])
+    ax3.spines['left'].set_color(PROFESSIONAL_COLORS['silver'])
+    ax3.spines['bottom'].set_color(PROFESSIONAL_COLORS['silver'])
+    ax3.tick_params(colors=PROFESSIONAL_COLORS['text_secondary'], labelsize=12)
+    ax3.set_facecolor(PROFESSIONAL_COLORS['background'])
     
     # Panel 4: Sector Transformation - Executive teal gradient
     ax4 = fig.add_subplot(gs[1, 0])
     sectors = ['Camping', 'Holiday\nRentals', 'Hotels']
     sector_growth = [115, 25, 17]
-    colors4 = [EXECUTIVE_COLORS['primary_teal'], EXECUTIVE_COLORS['secondary_teal'], 
-               EXECUTIVE_COLORS['accent_teal']]  # Consistent teal gradient
+    colors4 = [PROFESSIONAL_COLORS['primary_teal'], PROFESSIONAL_COLORS['secondary_teal'], 
+               PROFESSIONAL_COLORS['accent_teal']]  # Consistent teal gradient
     bars4 = ax4.bar(sectors, sector_growth, color=colors4, alpha=0.85, width=0.65)
     
     for bar, value in zip(bars4, sector_growth):
         ax4.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 3, 
                 f'+{value}%', ha='center', va='bottom', fontweight='bold', 
-                fontsize=13, color=EXECUTIVE_COLORS['text_primary'])
+                fontsize=13, color=PROFESSIONAL_COLORS['text_primary'])
     
     ax4.set_title('Sector Transformation', fontsize=18, fontweight='bold', 
-                 color=EXECUTIVE_COLORS['primary_teal'], pad=20)  # Consistent with teal theme
-    ax4.set_ylabel('% Growth vs 2019', fontsize=14, color=EXECUTIVE_COLORS['text_secondary'])
-    ax4.grid(axis='y', alpha=0.4, color=EXECUTIVE_COLORS['grid'])
+                 color=PROFESSIONAL_COLORS['primary_teal'], pad=20)  # Consistent with teal theme
+    ax4.set_ylabel('% Growth vs 2019', fontsize=14, color=PROFESSIONAL_COLORS['text_secondary'])
+    ax4.grid(axis='y', alpha=0.4, color=PROFESSIONAL_COLORS['grid'])
     ax4.spines['top'].set_visible(False)
     ax4.spines['right'].set_visible(False)
-    ax4.spines['left'].set_color(EXECUTIVE_COLORS['silver'])
-    ax4.spines['bottom'].set_color(EXECUTIVE_COLORS['silver'])
-    ax4.tick_params(colors=EXECUTIVE_COLORS['text_secondary'], labelsize=12)
-    ax4.set_facecolor(EXECUTIVE_COLORS['background'])
+    ax4.spines['left'].set_color(PROFESSIONAL_COLORS['silver'])
+    ax4.spines['bottom'].set_color(PROFESSIONAL_COLORS['silver'])
+    ax4.tick_params(colors=PROFESSIONAL_COLORS['text_secondary'], labelsize=12)
+    ax4.set_facecolor(PROFESSIONAL_COLORS['background'])
     
     # Panel 5: Executive Key Findings
     ax5 = fig.add_subplot(gs[1, 1:])
@@ -964,7 +970,7 @@ EXECUTIVE SUMMARY:
   the most severe industry disruption in modern history.
 
 • REMARKABLE RECOVERY: Full recovery achieved by 2023, with 2024 showing 8% 
-  growth above pre-pandemic baseline across EU27 markets.
+  growth above pre-pandemic baseline across EU markets.
 
 • MARKET LEADERS: Netherlands (+19%), Portugal (+15%), and Croatia (+14%) 
   emerged as top-performing destinations in the post-pandemic landscape.
@@ -978,21 +984,20 @@ EXECUTIVE SUMMARY:
     
     ax5.text(0.05, 0.95, key_findings, transform=ax5.transAxes, fontsize=15,
              verticalalignment='top', fontfamily='sans-serif', 
-             color=EXECUTIVE_COLORS['text_primary'],
-             bbox=dict(boxstyle='round,pad=1.2', facecolor=EXECUTIVE_COLORS['background'], 
-                      alpha=0.95, edgecolor=EXECUTIVE_COLORS['silver'], linewidth=2))
+             color=PROFESSIONAL_COLORS['text_primary'],
+             bbox=dict(boxstyle='round,pad=1.2', facecolor=PROFESSIONAL_COLORS['background'], 
+                      alpha=0.95, edgecolor=PROFESSIONAL_COLORS['silver'], linewidth=2))
     
     # Executive source citation
     plt.figtext(0.02, 0.02, 
-               'Source: Eurostat TOUR_OCC_NIM Dataset | Analysis: Tourist nights at accommodation establishments across EU27 markets (2019-2024)',
-               fontsize=11, style='italic', color=EXECUTIVE_COLORS['slate'])
+               'Source: Eurostat TOUR_OCC_NIM Dataset | Analysis: Tourist nights at accommodation establishments across EU markets (2019-2024)',
+               fontsize=11, style='italic', color=PROFESSIONAL_COLORS['slate'])
     
-    plt.savefig('executive_5_summary_dashboard.png', dpi=300, bbox_inches='tight', 
-               facecolor=EXECUTIVE_COLORS['background'], edgecolor='none', pad_inches=0.3)
+    plt.savefig('5_summary_dashboard.png', dpi=300, bbox_inches='tight', 
+               facecolor=PROFESSIONAL_COLORS['background'], edgecolor='none', pad_inches=0.3)
     plt.show()
 
 def chart7_domestic_vs_international_recovery(df):
-    """Chart 7: Domestic vs International Tourism Recovery Comparison"""
     
     # Get EU27 domestic and international recovery data
     recovery_data = df[
@@ -1009,12 +1014,12 @@ def chart7_domestic_vs_international_recovery(df):
         
         # Create executive visualization
         fig, ax = plt.subplots(figsize=(18, 12))
-        fig.patch.set_facecolor(EXECUTIVE_COLORS['background'])
+        fig.patch.set_facecolor(PROFESSIONAL_COLORS['background'])
         
-        # Color scheme for domestic vs international
+        # Color scheme for domestic vs international - consistent with executive palette
         colors = {
-            'DOM': '#2ECC71',  # Green - Domestic (positive, local)
-            'FOR': '#E74C3C'   # Red - International (challenges, restrictions)
+            'DOM': PROFESSIONAL_COLORS['primary_blue'],    # Blue for domestic (consistent)
+            'FOR': PROFESSIONAL_COLORS['primary_green']    # Green for international (consistent)
         }
         
         labels = {
@@ -1032,65 +1037,94 @@ def chart7_domestic_vs_international_recovery(df):
                        markeredgecolor=colors[c_resid], markeredgewidth=3)
         
         # Add baseline and background shading
-        ax.axhline(y=0, color=EXECUTIVE_COLORS['primary_red'], linestyle='--', 
+        ax.axhline(y=0, color=PROFESSIONAL_COLORS['primary_red'], linestyle='--', 
                   linewidth=3, alpha=0.8, label='Pre-Pandemic Baseline (2019)')
         
         # Background periods
         ax.axvspan(pd.to_datetime('2020-03'), pd.to_datetime('2021-06'), 
                   alpha=0.3, color='#FFD6D6', label='Crisis Period', zorder=1)
-        ax.axvspan(pd.to_datetime('2023-01'), pd.to_datetime('2024-12'), 
-                  alpha=0.3, color='#D6E8FF', label='Recovery Period', zorder=1)
         
         # Styling
-        ax.set_title('Domestic vs International Tourism Recovery\nEU27 Performance Comparison (2020-2024)', 
-                    fontsize=26, fontweight='bold', pad=35, color=EXECUTIVE_COLORS['text_primary'])
-        ax.set_xlabel('Year', fontsize=18, color=EXECUTIVE_COLORS['text_secondary'])
-        ax.set_ylabel('Performance vs 2019 Baseline (%)', fontsize=18, color=EXECUTIVE_COLORS['text_secondary'])
+        ax.set_title('Domestic vs International Tourism Recovery\nEU Performance Comparison (2020-2024)', 
+                    fontsize=26, fontweight='bold', pad=35, color=PROFESSIONAL_COLORS['text_primary'])
+        ax.set_xlabel('Year', fontsize=18, color=PROFESSIONAL_COLORS['text_secondary'])
+        ax.set_ylabel('Performance vs 2019 Baseline (%)', fontsize=18, color=PROFESSIONAL_COLORS['text_secondary'])
         
         # Legend
         legend = ax.legend(loc='lower right', frameon=True, fancybox=True, 
                           shadow=True, fontsize=14, framealpha=0.95)
-        legend.get_frame().set_facecolor(EXECUTIVE_COLORS['background'])
-        legend.get_frame().set_edgecolor(EXECUTIVE_COLORS['silver'])
+        legend.get_frame().set_facecolor(PROFESSIONAL_COLORS['background'])
+        legend.get_frame().set_edgecolor(PROFESSIONAL_COLORS['silver'])
         
         # Executive styling
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
-        ax.spines['left'].set_color(EXECUTIVE_COLORS['silver'])
-        ax.spines['bottom'].set_color(EXECUTIVE_COLORS['silver'])
+        ax.spines['left'].set_color(PROFESSIONAL_COLORS['silver'])
+        ax.spines['bottom'].set_color(PROFESSIONAL_COLORS['silver'])
         ax.spines['left'].set_linewidth(1.5)
         ax.spines['bottom'].set_linewidth(1.5)
         
-        ax.grid(True, alpha=0.4, linestyle='-', linewidth=1.0, color=EXECUTIVE_COLORS['grid'], zorder=0)
+        ax.grid(True, alpha=0.4, linestyle='-', linewidth=1.0, color=PROFESSIONAL_COLORS['grid'], zorder=0)
         ax.set_axisbelow(True)
         
-        ax.tick_params(axis='both', which='major', labelsize=14, colors=EXECUTIVE_COLORS['text_secondary'])
-        ax.tick_params(axis='both', length=8, width=1.5, color=EXECUTIVE_COLORS['silver'])
+        ax.tick_params(axis='both', which='major', labelsize=14, colors=PROFESSIONAL_COLORS['text_secondary'])
+        ax.tick_params(axis='both', length=8, width=1.5, color=PROFESSIONAL_COLORS['silver'])
         
-        # Key insights annotations
-        ax.annotate('Domestic Tourism\nResilient Recovery', 
-                   xy=(pd.to_datetime('2022-06'), 5), 
-                   xytext=(pd.to_datetime('2021-03'), 25),
-                   arrowprops=dict(arrowstyle='->', color='#2ECC71', lw=3),
-                   fontsize=14, ha='center', color='#2ECC71', fontweight='bold',
-                   bbox=dict(boxstyle="round,pad=0.5", facecolor=EXECUTIVE_COLORS['background'], 
-                            edgecolor='#2ECC71', alpha=0.9, linewidth=2))
+        # Get actual data for annotations
+        dom_data = monthly_recovery[monthly_recovery['c_resid'] == 'DOM'].copy()
+        for_data = monthly_recovery[monthly_recovery['c_resid'] == 'FOR'].copy()
         
-        ax.annotate('International Tourism\nSlower Recovery', 
-                   xy=(pd.to_datetime('2023-06'), -10), 
-                   xytext=(pd.to_datetime('2022-03'), -30),
-                   arrowprops=dict(arrowstyle='->', color='#E74C3C', lw=3),
-                   fontsize=14, ha='center', color='#E74C3C', fontweight='bold',
-                   bbox=dict(boxstyle="round,pad=0.5", facecolor=EXECUTIVE_COLORS['background'], 
-                            edgecolor='#E74C3C', alpha=0.9, linewidth=2))
+        # Key insights annotations - point to actual data
+        if not dom_data.empty:
+            # Sort domestic data by date
+            dom_sorted = dom_data.sort_values('date').reset_index(drop=True)
+            
+            # Find first 2022 point and go 6 points before (5 + 1 additional)
+            dom_2022_mask = dom_sorted['date'].dt.year == 2022
+            if dom_2022_mask.any():
+                first_2022_pos = dom_2022_mask.idxmax()  # First True index
+                target_pos = max(0, first_2022_pos - 6)  # 6 points back instead of 5
+                
+                dom_date = dom_sorted.iloc[target_pos]['date']
+                dom_value = dom_sorted.iloc[target_pos]['obs_value']
+                
+                ax.annotate('Domestic Tourism\nResilient Recovery', 
+                           xy=(dom_date, dom_value), 
+                           xytext=(pd.to_datetime('2021-03'), dom_value + 5),  # Lowered from +20 to +5
+                           arrowprops=dict(arrowstyle='->', color='#4A4A4A', lw=4,
+                                         connectionstyle="arc3,rad=0.2", shrinkA=5, shrinkB=5),
+                           fontsize=14, ha='center', color='#4A4A4A', fontweight='bold',
+                           bbox=dict(boxstyle="round,pad=0.5", facecolor=PROFESSIONAL_COLORS['background'], 
+                                    edgecolor='#4A4A4A', alpha=0.9, linewidth=2))
+        
+        if not for_data.empty:
+            # Sort international data by date
+            for_sorted = for_data.sort_values('date').reset_index(drop=True)
+            
+            # Find first 2023 point and go 1 point after
+            for_2023_mask = for_sorted['date'].dt.year == 2023
+            if for_2023_mask.any():
+                first_2023_pos = for_2023_mask.idxmax()  # First True index
+                target_pos = min(len(for_sorted) - 1, first_2023_pos + 1)  # Ensure we don't exceed bounds
+                
+                for_date = for_sorted.iloc[target_pos]['date']
+                for_value = for_sorted.iloc[target_pos]['obs_value']
+                
+                ax.annotate('International Tourism\nSlower Recovery', 
+                           xy=(for_date, for_value), 
+                           xytext=(pd.to_datetime('2023-09'), for_value - 20),  # Moved text to the right (Sept 2023)
+                           arrowprops=dict(arrowstyle='->', color='#4A4A4A', lw=4,
+                                         connectionstyle="arc3,rad=-0.2", shrinkA=5, shrinkB=5),
+                           fontsize=14, ha='center', color='#4A4A4A', fontweight='bold',
+                           bbox=dict(boxstyle="round,pad=0.5", facecolor=PROFESSIONAL_COLORS['background'], 
+                                    edgecolor='#4A4A4A', alpha=0.9, linewidth=2))
         
         plt.tight_layout()
-        plt.savefig('executive_7_domestic_vs_international.png', dpi=300, bbox_inches='tight', 
-                   facecolor=EXECUTIVE_COLORS['background'], edgecolor='none', pad_inches=0.3)
+        plt.savefig('7_domestic_vs_international.png', dpi=300, bbox_inches='tight', 
+                   facecolor=PROFESSIONAL_COLORS['background'], edgecolor='none', pad_inches=0.3)
         plt.show()
 
 def chart8_seasonal_patterns_comparison(df):
-    """Chart 8: Post-Pandemic Seasonal Patterns vs Pre-Pandemic"""
     
     # Get EU27 monthly data for comparison periods
     seasonal_data = df[
@@ -1107,7 +1141,7 @@ def chart8_seasonal_patterns_comparison(df):
         
         # Create executive visualization
         fig, ax = plt.subplots(figsize=(18, 12))
-        fig.patch.set_facecolor(EXECUTIVE_COLORS['background'])
+        fig.patch.set_facecolor(PROFESSIONAL_COLORS['background'])
         
         # Month labels
         months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
@@ -1157,9 +1191,9 @@ def chart8_seasonal_patterns_comparison(df):
         
         # Styling
         ax.set_title('Seasonal Tourism Patterns: Recovery Evolution\nMonthly Performance Comparison (2019 vs 2022-2024)', 
-                    fontsize=26, fontweight='bold', pad=35, color=EXECUTIVE_COLORS['text_primary'])
-        ax.set_xlabel('Month', fontsize=18, color=EXECUTIVE_COLORS['text_secondary'])
-        ax.set_ylabel('Tourist Arrivals (Millions)', fontsize=18, color=EXECUTIVE_COLORS['text_secondary'])
+                    fontsize=26, fontweight='bold', pad=35, color=PROFESSIONAL_COLORS['text_primary'])
+        ax.set_xlabel('Month', fontsize=18, color=PROFESSIONAL_COLORS['text_secondary'])
+        ax.set_ylabel('Tourist Arrivals (Millions)', fontsize=18, color=PROFESSIONAL_COLORS['text_secondary'])
         
         # Set month labels
         ax.set_xticks(range(1, 13))
@@ -1168,43 +1202,43 @@ def chart8_seasonal_patterns_comparison(df):
         # Legend
         legend = ax.legend(loc='upper left', frameon=True, fancybox=True, 
                           shadow=True, fontsize=14, framealpha=0.95)
-        legend.get_frame().set_facecolor(EXECUTIVE_COLORS['background'])
-        legend.get_frame().set_edgecolor(EXECUTIVE_COLORS['silver'])
+        legend.get_frame().set_facecolor(PROFESSIONAL_COLORS['background'])
+        legend.get_frame().set_edgecolor(PROFESSIONAL_COLORS['silver'])
         
         # Executive styling
         ax.spines['top'].set_visible(False)
         ax.spines['right'].set_visible(False)
-        ax.spines['left'].set_color(EXECUTIVE_COLORS['silver'])
-        ax.spines['bottom'].set_color(EXECUTIVE_COLORS['silver'])
+        ax.spines['left'].set_color(PROFESSIONAL_COLORS['silver'])
+        ax.spines['bottom'].set_color(PROFESSIONAL_COLORS['silver'])
         ax.spines['left'].set_linewidth(1.5)
         ax.spines['bottom'].set_linewidth(1.5)
         
-        ax.grid(True, alpha=0.4, linestyle='-', linewidth=1.0, color=EXECUTIVE_COLORS['grid'], zorder=0)
+        ax.grid(True, alpha=0.4, linestyle='-', linewidth=1.0, color=PROFESSIONAL_COLORS['grid'], zorder=0)
         ax.set_axisbelow(True)
         
-        ax.tick_params(axis='both', which='major', labelsize=14, colors=EXECUTIVE_COLORS['text_secondary'])
-        ax.tick_params(axis='both', length=8, width=1.5, color=EXECUTIVE_COLORS['silver'])
+        ax.tick_params(axis='both', which='major', labelsize=14, colors=PROFESSIONAL_COLORS['text_secondary'])
+        ax.tick_params(axis='both', length=8, width=1.5, color=PROFESSIONAL_COLORS['silver'])
         
         # Key insights annotations
         ax.annotate('Summer Peak\nFully Restored', 
                    xy=(7, 120), 
                    xytext=(9, 140),
-                   arrowprops=dict(arrowstyle='->', color='#2ECC71', lw=3),
-                   fontsize=14, ha='center', color='#2ECC71', fontweight='bold',
-                   bbox=dict(boxstyle="round,pad=0.5", facecolor=EXECUTIVE_COLORS['background'], 
-                            edgecolor='#2ECC71', alpha=0.9, linewidth=2))
+                   arrowprops=dict(arrowstyle='->', color='#4A4A4A', lw=3),
+                   fontsize=14, ha='center', color='#4A4A4A', fontweight='bold',
+                   bbox=dict(boxstyle="round,pad=0.5", facecolor=PROFESSIONAL_COLORS['background'], 
+                            edgecolor='#4A4A4A', alpha=0.9, linewidth=2))
         
         ax.annotate('Shoulder Seasons\nStronger Than 2019', 
                    xy=(4, 85), 
                    xytext=(2, 110),
-                   arrowprops=dict(arrowstyle='->', color='#3498DB', lw=3),
-                   fontsize=14, ha='center', color='#3498DB', fontweight='bold',
-                   bbox=dict(boxstyle="round,pad=0.5", facecolor=EXECUTIVE_COLORS['background'], 
-                            edgecolor='#3498DB', alpha=0.9, linewidth=2))
+                   arrowprops=dict(arrowstyle='->', color='#4A4A4A', lw=3),
+                   fontsize=14, ha='center', color='#4A4A4A', fontweight='bold',
+                   bbox=dict(boxstyle="round,pad=0.5", facecolor=PROFESSIONAL_COLORS['background'], 
+                            edgecolor='#4A4A4A', alpha=0.9, linewidth=2))
         
         plt.tight_layout()
-        plt.savefig('executive_8_seasonal_patterns.png', dpi=300, bbox_inches='tight', 
-                   facecolor=EXECUTIVE_COLORS['background'], edgecolor='none', pad_inches=0.3)
+        plt.savefig('8_seasonal_patterns.png', dpi=300, bbox_inches='tight', 
+                   facecolor=PROFESSIONAL_COLORS['background'], edgecolor='none', pad_inches=0.3)
         plt.show()
 
 def main():
