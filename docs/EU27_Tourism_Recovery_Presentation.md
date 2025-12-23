@@ -78,7 +78,7 @@ Complete Story → Actionable Understanding
 ## 🎬 **Prologue: The Golden Age (2019)**
 ### Visualization: `covid_impact.png`
 
-![The Last Normal Year](covid_impact.png)
+![The Last Normal Year](../assets/images/covid_impact.png)
 
 **What it reveals:** The final snapshot of "normal" European tourism before the world changed forever
 
@@ -99,7 +99,7 @@ Complete Story → Actionable Understanding
 ## 🎬 **Act I: The Great Collapse (2020)**
 ### Visualization: `covid_impact_map_journalism.png`
 
-![The Devastation Map](covid_impact_map_journalism.png)
+![The Devastation Map](../assets/images/covid_impact_map_journalism.png)
 
 **What it shows:** A continent in crisis - the geographic anatomy of tourism's darkest hour
 
@@ -123,7 +123,7 @@ Complete Story → Actionable Understanding
 ## 🎬 **Act II: The Anatomy of Recovery (2020-2024)**
 ### Visualization: `recovery_trajectory.png`
 
-![The Phoenix Rises](recovery_trajectory.png)
+![The Phoenix Rises](../assets/images/recovery_trajectory.png)
 
 **What it reveals:** The most remarkable comeback story in modern European economic history
 
@@ -147,7 +147,7 @@ Complete Story → Actionable Understanding
 ## 🎬 **Act III: The New Champions (2024)**
 ### Visualization: `3_country_performance.png`
 
-![The Recovery Champions](3_country_performance.png)
+![The Recovery Champions](../assets/images/3_country_performance.png)
 
 **What it shows:** The winners of the greatest comeback in tourism history - who not only survived but thrived
 
@@ -176,7 +176,7 @@ Complete Story → Actionable Understanding
 ## 🎬 **Act IV: The Great Transformation**
 ### Visualization: `4_accommodation_sectors.png`
 
-![The Sector Revolution](4_accommodation_sectors.png)
+![The Sector Revolution](../assets/images/4_accommodation_sectors.png)
 
 **What it shows:** How the pandemic didn't just change where people traveled, but how they traveled
 
@@ -202,7 +202,7 @@ Complete Story → Actionable Understanding
 ## 🎬 **Act V: The Tale of Two Tourists**
 ### Visualization: `7_domestic_vs_international.png`
 
-![Domestic vs International Recovery](7_domestic_vs_international.png)
+![Domestic vs International Recovery](../assets/images/7_domestic_vs_international.png)
 
 **What it reveals:** The most fascinating subplot in our recovery story - how Europeans learned to love home first
 
@@ -223,7 +223,7 @@ Complete Story → Actionable Understanding
 ## 🎬 **Act VI: The Rhythm of Recovery**
 ### Visualization: `8_seasonal_patterns.png`
 
-![The New Seasonality](8_seasonal_patterns.png)
+![The New Seasonality](../assets/images/8_seasonal_patterns.png)
 
 **What it shows:** How the pandemic rewrote the calendar of European travel
 
@@ -248,7 +248,7 @@ Complete Story → Actionable Understanding
 ## 🎬 **Epilogue: The Monthly Journey (2019 vs 2020)**
 ### Visualization: `6_monthly_journey.png`
 
-![The Tale of Two Years](6_monthly_journey.png)
+![The Tale of Two Years](../assets/images/6_monthly_journey.png)
 
 **What it shows:** The most dramatic before-and-after story in tourism history - month by month, the collapse and the memory of what was lost
 
@@ -270,7 +270,7 @@ Complete Story → Actionable Understanding
 ## 🗺️ **Bonus Visualization: The 2024 Recovery Map**
 ### Visualization: `recovery_2024_map_journalism.png`
 
-![The Recovery Champions Map](recovery_2024_map_journalism.png)
+![The Recovery Champions Map](../assets/images/recovery_2024_map_journalism.png)
 
 **What it shows:** A geographic view of which EU countries achieved the strongest recovery by 2024 - the winners and strugglers mapped across Europe
 
