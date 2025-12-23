@@ -121,9 +121,9 @@ Complete Story → Actionable Understanding
 ---
 
 ## 🎬 **Act II: The Anatomy of Recovery (2020-2024)**
-### Visualization: `2_recovery_trajectory.png`
+### Visualization: `recovery_trajectory.png`
 
-![The Phoenix Rises](2_recovery_trajectory.png)
+![The Phoenix Rises](recovery_trajectory.png)
 
 **What it reveals:** The most remarkable comeback story in modern European economic history
 
@@ -145,7 +145,7 @@ Complete Story → Actionable Understanding
 ---
 
 ## 🎬 **Act III: The New Champions (2024)**
-### Visualization: `executive_3_country_performance.png`
+### Visualization: `3_country_performance.png`
 
 ![The Recovery Champions](3_country_performance.png)
 
@@ -174,7 +174,7 @@ Complete Story → Actionable Understanding
 ---
 
 ## 🎬 **Act IV: The Great Transformation**
-### Visualization: `executive_4_accommodation_sectors.png`
+### Visualization: `4_accommodation_sectors.png`
 
 ![The Sector Revolution](4_accommodation_sectors.png)
 
@@ -200,7 +200,7 @@ Complete Story → Actionable Understanding
 ---
 
 ## 🎬 **Act V: The Tale of Two Tourists**
-### Visualization: `executive_7_domestic_vs_international.png`
+### Visualization: `7_domestic_vs_international.png`
 
 ![Domestic vs International Recovery](7_domestic_vs_international.png)
 
@@ -221,7 +221,7 @@ Complete Story → Actionable Understanding
 ---
 
 ## 🎬 **Act VI: The Rhythm of Recovery**
-### Visualization: `executive_8_seasonal_patterns.png`
+### Visualization: `8_seasonal_patterns.png`
 
 ![The New Seasonality](8_seasonal_patterns.png)
 
@@ -245,30 +245,8 @@ Complete Story → Actionable Understanding
 
 ---
 
-## 🎬 **Act VII: The Executive Summary**
-### Visualization: `executive_5_summary_dashboard.png`
-
-![The Complete Story](5_summary_dashboard.png)
-
-**What it shows:** The entire epic condensed into one powerful dashboard - crisis, recovery, transformation, and triumph
-
-**The Four Panels of Truth:**
-
-**Panel 1 - Crisis Impact:** *"The red bars of 2020 - when tourism flatlined across the EU"*
-
-**Panel 2 - Recovery Timeline:** *"The blue line of hope - from -55% to +8% in four remarkable years"*
-
-**Panel 3 - 2024 Winners:** *"The green bars of victory - countries that emerged stronger than ever"*
-
-**Panel 4 - Sector Transformation:** *"The teal bars of change - how camping conquered, rentals rose, and hotels adapted"*
-
-**The Meta-Story:**
-*"This dashboard doesn't just show data—it shows transformation. Every panel represents a chapter in the greatest comeback story in modern European economic history. From universal collapse to selective triumph, from crisis to renaissance, from survival to success."*
-
----
-
 ## 🎬 **Epilogue: The Monthly Journey (2019 vs 2020)**
-### Visualization: `executive_6_monthly_journey.png`
+### Visualization: `6_monthly_journey.png`
 
 ![The Tale of Two Years](6_monthly_journey.png)
 
@@ -286,6 +264,18 @@ Complete Story → Actionable Understanding
 
 **The Promise:**
 *"But here's what this chart really shows us: the distance between these two lines is the distance we've traveled. Every gap represents resilience gained, lessons learned, strength discovered. The red line of 2020 is not our ending—it's our beginning."*
+
+---
+
+## 🗺️ **Bonus Visualization: The 2024 Recovery Map**
+### Visualization: `recovery_2024_map_journalism.png`
+
+![The Recovery Champions Map](recovery_2024_map_journalism.png)
+
+**What it shows:** A geographic view of which EU countries achieved the strongest recovery by 2024 - the winners and strugglers mapped across Europe
+
+**The Geographic Story:**
+> *"This map complements our country performance chart by showing the geographic distribution of recovery success. Green areas represent countries that not only recovered but exceeded pre-pandemic levels, while red areas show countries still working toward full recovery. The map reveals interesting patterns - coastal tourism destinations and smaller, agile economies often performed better than traditional large-scale tourism markets."*
 
 ---
 
@@ -344,13 +334,10 @@ Complete Story → Actionable Understanding
 ### **Slide 8: The New Rhythm (Chart 7)**
 *"Even the seasons dance to a different beat now..."*
 
-### **Slide 9: The Complete Picture (Chart 8)**
-*"When you put it all together, here's what you see..."*
-
-### **Slide 10: The Memory (Chart 9)**
+### **Slide 9: The Memory (Chart 8)**
 *"And this is how far we've come..."*
 
-### **Slide 11: The Future**
+### **Slide 10: The Future**
 *"So what does this story teach us about resilience, recovery, and the power of human connection?"*
 
 ---
